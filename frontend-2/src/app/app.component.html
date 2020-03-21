@@ -1,0 +1,11 @@
+<app-navbar *ngIf = "isReload();"> </app-navbar>
+
+
+
+<div class="container" >
+  
+    <router-outlet> </router-outlet>
+</div>
+
+<app-body *ngIf = "isReload();"></app-body>
+

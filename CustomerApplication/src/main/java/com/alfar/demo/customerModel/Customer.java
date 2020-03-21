@@ -21,24 +21,29 @@ public class Customer {
 	
 	private String name;
 	private int age;
-	private String Gender;
+	private String gender;
+	private String email;
+	private String password;
 	
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	private Address address;
 	
 	
+
+	
+
+
 	@OneToMany(mappedBy = "customer" , cascade = CascadeType.ALL)
 	private List<Telephone> telephone;
 	
 	
-	public Customer(Integer id, String name, int age, String gender, Address address, List<Telephone> telephone) {
+	public Customer(Integer id, String name, int age, String gender,String email,String password, List<Telephone> telephone) {
 		
 		this.id = id;
 		this.name = name;
 		this.age = age;
-		Gender = gender;
-		this.address = address;
+		this.gender = gender;
+		this.email = email;
+		this.password = password;
 		this.telephone = telephone;
 	}
 
@@ -63,6 +68,27 @@ public class Customer {
 		this.name = name;
 	}
 
+	
+	public String getEmail() {
+		return email;
+	}
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 
 	public int getAge() {
 		return age;
@@ -75,24 +101,16 @@ public class Customer {
 
 
 	public String getGender() {
-		return Gender;
+		return gender;
 	}
 
 
 	public void setGender(String gender) {
-		Gender = gender;
+		gender = gender;
 	}
 
 
-	public Address getAddress() {
-		return address;
-	}
-
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
+	
 
 	public List<Telephone> getTelephone() {
 		return telephone;

@@ -1,0 +1,73 @@
+<div id="booking" class="section">
+  <div class="section-center">
+    <div class="container">
+      <div class="row">
+        <div class="booking-form" style="background: url(assets/images/body.png) repeat 0 0;">
+          <div class="form-header">
+            <h1>Reserve Your Seats</h1>
+          </div>
+          <form >
+            <div class="form-group" >
+              <span style="color: #e35e0a;">Select Your Movie</span>
+              <select class="form-control" name ="movieid"  [(ngModel)] ="booking.movieid"  required>
+              
+              
+                <option *ngFor= "let movie of movies" [(ngValue)] = "movie.id" > {{movie.name}} </option>
+
+              </select>
+              <span class="select-arrow"></span>
+            
+            </div>
+            
+            
+                <div class="form-group">
+                  <span style="color:  #e35e0a;">Check In</span>
+                  <input class="form-control" name ="checkin" [(ngModel)] = "booking.ckeckin"   (ngModelChange)="booking.checkin = $event" placeholder = ""  type="date" required>
+                  
+                </div>
+              
+             
+            <div class="row">
+              
+              <div class="col-md-6">
+                <div class="form-group">
+                  <span style="color:  #e35e0a;">Adults</span>
+                  <input class="form-control" [(ngModel)] = "booking.adults" (ngModelChange) = "changePayment()" name="adults"  type="number" placeholder="No of Adults" required>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <span style="color:  #e35e0a;">Children</span>
+                    <input class="form-control" [(ngModel)] = "booking.children" (ngModelChange) = "changePayment()"
+                    name="children" type="number"  placeholder="No of Children" required>
+                </div>
+             </div>
+            </div>
+            
+            <div class="form-group">
+              <span style="color:  #e35e0a;">Select Your Time</span>
+              <select class="form-control" [(ngModel)] = "booking.time" name = "time" required>
+                
+                <option>10:30</option>
+                <option>14:30</option>
+                <option>19:30</option>
+                <option>21:30</option>
+              </select>
+              <span class="select-arrow"></span>
+              
+            </div>
+
+            <span style="color:  #e35e0a;">Your total payment is : </span>
+
+            <span style="color:  #e35e0a;"  [(ngModel)] = "booking.total"   id="payment">{{booking.total}} .00 </span>
+
+            <div class="form-btn">
+              <button class="submit-btn" (click)="insertBooking();" type="submit" >Book Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
