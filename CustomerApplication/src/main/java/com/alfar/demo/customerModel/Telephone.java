@@ -1,6 +1,8 @@
 package com.alfar.demo.customerModel;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,16 +17,17 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
-@Table(name = "Telephone")
-public class Telephone {
+@Table(name = "telephone")
+public class Telephone implements Serializable
+{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
 	
     String phoneNumber;
-	
-	@ManyToOne
+	 
+    @ManyToOne
 	@JoinColumn 
 	Customer customer;
 	
@@ -59,7 +62,7 @@ public class Telephone {
 		return customer;
 	}
 
-	public void setStudent(Customer customer) {
+	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
 

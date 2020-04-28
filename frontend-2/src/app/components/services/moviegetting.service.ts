@@ -20,6 +20,30 @@ public total : number
 
 }
 
+export class Movie{
+
+constructor(
+public id : number,
+public name : String,
+public language : Language,
+public image : any
+
+){}
+
+}
+
+export class Language{
+
+
+constructor(
+public languageid : number,
+public languagename : String
+
+
+){}
+
+}
+
 
 
 
@@ -41,8 +65,13 @@ public insertBooking(booking){
 public getMovies(){
 
 
- return this.httpclient.get("http://localhost:9192/Movie/findAllMovies");
+ return this.httpclient.get<Movie>("http://localhost:9192/Movie/findAllMovies?access_token=" + sessionStorage.getItem('accessToken'));
 
+}
+
+public deleteMovie(id){
+
+  return this.httpclient.delete("http://localhost:9192/Movie/deleteMovie/"+id+"?access_token=" + sessionStorage.getItem('accessToken'))
 }
 
 

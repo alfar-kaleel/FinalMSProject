@@ -1,5 +1,7 @@
 package com.alfar.demo.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,7 +10,7 @@ import javax.persistence.Table;
 
 @Table(name = "Languages")
 @Entity
-public class Language {
+public class Language implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

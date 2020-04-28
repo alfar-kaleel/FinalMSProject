@@ -1,3 +1,46 @@
-<p>
-  profile works!
-</p>
+<div style="background: url(assets/images/body.png); text-align: center;">
+  <h1 style="color: aliceblue;">Your profile</h1>
+<table style="border-spacing: 100px 50px; border-collapse: separate;">
+<tbody>
+  <tr>
+    <td style="color: blanchedalmond;"><h3>Name : </h3></td>
+    <td style="color: blanchedalmond;"><h3>{{profiles.username}}</h3></td>
+  </tr>
+
+  <tr>
+    <td style="color: blanchedalmond;"><h3>Age : </h3></td>
+    <td style="color: blanchedalmond;"><h3>{{profiles.age}}</h3></td>
+  </tr>
+
+  <tr>
+    <td style="color: blanchedalmond;"><h3>Email : </h3></td>
+    <td style="color: blanchedalmond;"><h3>{{profiles.email}}</h3></td>
+  </tr>
+
+  <tr>
+    <td style="color: blanchedalmond;"><h3>Telephone : </h3></td>
+    <td style="color: blanchedalmond;"><h3>{{profiles.telephone[0].phoneNumber}}</h3></td>
+  </tr>
+
+  <tr>
+    <td style="color: blanchedalmond;"><h3>Address : </h3></td>
+    <td style="color: blanchedalmond;"><h3>{{profiles.address.city}}</h3></td>
+  </tr>
+
+  <tr>
+    <td style="color: blanchedalmond;"><h3>Gender : </h3></td>
+    <td style="color: blanchedalmond;"><h3>{{profiles.gender}}</h3></td>
+  </tr>
+
+  <tr><button routerLink = "/orderdetails" type="button" class="btn btn-primary float-right" >Click to view Order History</button></tr>
+</tbody>
+
+
+
+</table>
+
+
+
+
+
+</div>

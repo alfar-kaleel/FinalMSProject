@@ -1,0 +1,28 @@
+<div style="background: url(assets/images/body.png); text-align: center;">
+  <h1 style="color: aliceblue;">Current Shows and times</h1>
+  <table style="border-spacing: 100px 50px; border-collapse: separate;">
+     <thead>
+        <tr>
+           <th style="color: blanchedalmond;">Movie Name</th>
+           <th style="margin-left: 30dp; color: blanchedalmond;">Language</th>
+           <th style="margin-left: 30dp; color: blanchedalmond;">Poster</th>
+           <th style="margin-left: 30dp; color: blanchedalmond;"></th>
+           
+        </tr>
+     </thead>
+     <tbody>
+        <tr *ngFor="let Movie of movies" style="padding-top: 10dp;">
+           <td style="color: blanchedalmond;">{{Movie.name}}</td>
+           <td style="color: blanchedalmond;">{{Movie.language[0].name}}</td>
+           <td >
+            <img src="{{ 'data:image/jpeg;base64,' + Movie.image }}" style="max-width: 150px; max-height: 200px;">
+           </td>
+          
+           <td>
+              <button type="button" class="btn btn-primary" routerLink = "/booking">Reserve Seats</button>
+              
+           </td>
+        </tr>
+     </tbody>
+  </table>
+</div>

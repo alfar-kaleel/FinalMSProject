@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
   address: Address = new Address("");
   telephone: Telephone=new Telephone("");
 
-  user: Customer = new Customer('',0,'','',this.address,null,'');
+  user: Customer = new Customer('',0,'','',this.address,[this.telephone],'');
 
 
   constructor(private httpCliService : HttpCliService,private router : Router) { }

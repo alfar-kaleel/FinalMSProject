@@ -17,10 +17,17 @@ constructor(public id :number,
             public gender :String,
             public email :String,
             public address :Address,
-            public telephone : Telephone
+            public telephone : Telephone,
+            public roles : Role
             
             ){}
             
+}
+
+export class Role{
+
+constructor(public name : String){}
+
 }
 
 export class Address {
@@ -55,7 +62,10 @@ export class MoviebookingloginService {
   }
 
   
+  public getAllUsers(){
 
+    return this.httpClient.get("http://localhost:9191/customer/getAllCustomers");
+  }
 
   public getUser(username){
 

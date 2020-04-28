@@ -3,6 +3,7 @@ package com.alfar.spring.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,16 +12,23 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
-@Table
+
+
+
+
 @Entity
+@Table(name = "user")
 public class User implements Serializable{
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	
@@ -29,6 +37,20 @@ public class User implements Serializable{
 	private String username;
 	private String password;
 	private String email;
+	
+	private int age;
+	
+
+	private String Gender;
+	
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Address address;
+	
+	
+	@OneToMany(mappedBy = "user" , cascade = CascadeType.ALL)
+	private List<Telephone> telephone;
+	
 	private boolean enabled;
 	private boolean accountNonExpired;
 	private boolean credentialsNonExpired;
@@ -42,6 +64,9 @@ public class User implements Serializable{
 		this.username = user.username;
 		this.password = user.password;
 		this.email = user.email;
+		this.age = user.age;
+		this.Gender = user.Gender;
+		this.address = user.address;
 		this.enabled = user.enabled;
 		this.accountNonExpired = user.accountNonExpired;
 		this.credentialsNonExpired = user.credentialsNonExpired;
@@ -72,6 +97,8 @@ public class User implements Serializable{
 		this.username = username;
 	}
 
+	
+	
 	public String getPassword() {
 		return password;
 	}
@@ -88,6 +115,7 @@ public class User implements Serializable{
 		this.email = email;
 	}
 
+	@JsonIgnore
 	public boolean isEnabled() {
 		return enabled;
 	}
@@ -96,6 +124,7 @@ public class User implements Serializable{
 		this.enabled = enabled;
 	}
 
+	@JsonIgnore
 	public boolean isAccountNonExpired() {
 		return accountNonExpired;
 	}
@@ -104,6 +133,7 @@ public class User implements Serializable{
 		this.accountNonExpired = accountNonExpired;
 	}
 
+	@JsonIgnore
 	public boolean isCredentialsNonExpired() {
 		return credentialsNonExpired;
 	}
@@ -112,6 +142,7 @@ public class User implements Serializable{
 		this.credentialsNonExpired = credentialsNonExpired;
 	}
 
+	@JsonIgnore
 	public boolean isAccountNonLocked() {
 		return accountNonLocked;
 	}
@@ -126,6 +157,38 @@ public class User implements Serializable{
 
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getGender() {
+		return Gender;
+	}
+
+	public void setGender(String gender) {
+		Gender = gender;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public List<Telephone> getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(List<Telephone> telephone) {
+		this.telephone = telephone;
 	}
 
 	

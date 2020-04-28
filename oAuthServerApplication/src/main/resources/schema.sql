@@ -32,6 +32,8 @@ create table if not exists role (
 create table if not exists  user (
   id int(11) not null auto_increment,
   username varchar(100) not null,
+  age int(11) not null,
+  gender varchar(100) not null,
   password varchar(1024) not null,
   email varchar(1024) not null,
   enabled tinyint(4) not null,
@@ -100,4 +102,11 @@ create table if not exists oauth_approvals (
 	expiresAt TIMESTAMP,
 	lastModifiedAt TIMESTAMP
 );
+
+
+
+
+
+
+
 

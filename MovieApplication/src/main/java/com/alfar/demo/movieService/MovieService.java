@@ -11,6 +11,8 @@ public interface MovieService {
 	
 	Movie saveMovie(Movie movie); 
 	
-	void deleteMovieById(int movieId);
+	void deleteMovieById(int id);
+	
+	//List <Movie> findMoviebyLanguage(String language);
 
 }

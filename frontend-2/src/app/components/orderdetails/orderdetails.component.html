@@ -1,0 +1,58 @@
+<nav class="navbar navbar-light bg-light justify-content-between" style="background: url(assets/images/body.png) repeat 0 0;">
+  
+ 
+
+
+<h3 style="color: chartreuse;">Enjoy Your Movie By submitting the last id of your Booking history</h3>
+  
+ 
+</nav>
+
+
+<div class="mt-4 col-8 offset-2" >
+  <div class="card">
+    <div class="card bg-primary text-white">
+  <div class="card-header">
+Booking History
+  </div></div>
+
+  <div class="card-body" style="background: url(assets/images/body.png); text-align: center;">
+
+    <table style= "border-spacing: 40px 20px; border-collapse: separate;">
+      <thead>
+         <tr>
+          <div class="form-group row">
+            <div class="col-sm-10 " >
+            
+            <th style="margin-left: 30dp; color: blanchedalmond;">Booking id</th>
+            <th style="margin-left: 30dp; color: blanchedalmond;">Movie id</th>
+            <th style="margin-left: 30dp; color: blanchedalmond;">Adults</th>
+            <th style="margin-left: 30dp; color: blanchedalmond;">Children</th>
+            <th style="margin-left: 30dp; color: blanchedalmond;">Time</th>
+            <th style="margin-left: 30dp; color: blanchedalmond;">Date</th>
+            <th style="margin-left: 30dp; color: blanchedalmond;">Payment</th>
+            </div>
+            </div>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let booking of bookings" style="border-spacing: 68px 20px; border-collapse: separate;">
+
+          <div class="form-group row">
+            <div class="col-sm-10 " >
+            <td style="color: blanchedalmond;">{{booking.id}}</td>
+            <td style= " margin-left: 30dp; color: blanchedalmond;">{{booking.movieid}}</td>
+            <td style= " margin-left: 30dp; color: blanchedalmond;">{{booking.adults}}</td>
+            <td style= " margin-left: 30dp; color: blanchedalmond;">{{booking.children}}</td>
+            <td style= " margin-left: 30dp; color: blanchedalmond;">{{booking.time}}</td>
+            <td style= " margin-left: 30dp; color: blanchedalmond;">{{booking.checkin}}</td>
+            <td style= " margin-left: 30dp; color: blanchedalmond;">{{booking.total}}</td>
+            
+            </div></div>
+           
+         </tr>
+      </tbody>
+   </table>
+
+  </div></div>
+  </div>

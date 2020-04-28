@@ -13,8 +13,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-@Table
 @Entity
+@Table(name = "permission")
 public class Permission implements Serializable{
 	
 	@Id

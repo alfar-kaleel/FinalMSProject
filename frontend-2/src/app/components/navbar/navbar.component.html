@@ -1,13 +1,18 @@
-<nav class="navbar navbar-light bg-light justify-content-between">
+<nav class="navbar navbar-light bg-light justify-content-between" style="background: url(assets/images/body.png) repeat 0 0;">
   <a class="navbar-brand" >Welcome to the Movie Booking System</a>
  
 <div>
 
-  <a class="navbar-brand" routerLink = "login">Login</a>
+  <a class="navbar-brand" routerLink = "/login" *ngIf = "loginLoad();" style="color: rgb(89, 248, 16);" >Login</a>
+
+  <a class="navbar-brand" routerLink = "/" *ngIf = "homeLoad();" style="color: rgb(89, 248, 16);" >Home</a>
+ 
+  <a class = "navbar-brand" routerLink = "/profile" *ngIf = "profileLoad()" style="color: rgb(89, 248, 16);">Profile</a>
   
-  
+  <a class = "navbar-brand" (click) = "signoutUser();" *ngIf = "signoutLoad();" style="color: rgb(89, 248, 16);">Logout</a>
 
 </div>
  
 </nav>
+
 

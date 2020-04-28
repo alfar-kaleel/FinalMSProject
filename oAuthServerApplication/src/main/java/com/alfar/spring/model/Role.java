@@ -14,8 +14,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 
-@Table
+
 @Entity
+@Table(name = "role")
 public class Role implements Serializable{
 	
 	@Id

@@ -6,8 +6,8 @@ import com.alfar.demo.customerModel.Customer;
 
 public interface customerRepository extends JpaRepository<Customer,Integer>{
 	
+	Customer findByUsername(String username);
 	
 	
 	
-
 }
